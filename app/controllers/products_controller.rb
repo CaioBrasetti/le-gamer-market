@@ -1,5 +1,12 @@
 class ProductsController < ApplicationController
   def index
+    @products = Product.all
+    # if params[:category].present?
+    #     @products = @products.select do |product|
+    #       product
+    #       raise
+    #     end
+    # end
   end
 
   def show
