@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :user
+
   validates :name, :price, :description, :quantity, :category, presence: true
   validates :price, presence: true
 
