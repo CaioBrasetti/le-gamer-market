@@ -6,5 +6,3 @@ class ApplicationJob < ActiveJob::Base
   # discard_on ActiveJob::DeserializationError
   # comment
 end
-
-#test test test
