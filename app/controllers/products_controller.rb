@@ -2,6 +2,10 @@ class ProductsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
+    @products = Product.all
+    if params[:category].present?
+      @products = @products.where("category Ilike ?", params[:category])
+    end
   end
 
   def show
@@ -21,12 +25,7 @@ class ProductsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-  end
-
-  def update
+  end0 update
   end
 
   def destroy
