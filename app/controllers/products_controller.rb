@@ -26,10 +26,16 @@ class ProductsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+  end
+
   def update
   end
 
   def destroy
+    @product.destroy
+    redirect_to list_path(@bookmark.movie), status: :see_other
   end
 
   private
