@@ -1,18 +1,22 @@
-<h1><%= @product.name%></h1>
+<div class="container mt-3">
+  <div class="text-center">
+  <h1><%= @product.name%></h1>
 
-<p><%= @product.description%></p>
-<h6><%= @product.price%></h6>
-<p><%= @product.quantity%></p>
-<p><%= @product.category%></p>
+  <p>Description: <%= @product.description%></p>
+  <h6>Price: <%= @product.price%></h6>
+  <p>Quantity: <%= @product.quantity%></p>
+  <p>Category: <%= @product.category%></p>
 
 
-<% if current_user && current_user == @product.user %>
-    <p><%= link_to 'Editar produto', edit_product_path, class: 'btn btn-primary mt-2'%></p>
-    <p><%= link_to 'Deletar produto', product_path(@product), data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' }%></p>
-  <% else %>
-    <%= simple_form_for [@product, @order] do |f| %>
-      <%= f.input :quantity %>
-      <%= f.submit "Comprar", class: 'btn btn-primary' %>
-    <% end  %>
-  <% end %>
-<p><%= link_to 'Voltar para os produtos', root_path%></p>
+  <% if current_user && current_user == @product.user %>
+      <p><%= link_to 'Editar produto', edit_product_path, class: 'btn btn-primary mt-2'%></p>
+      <p><%= link_to 'Deletar produto', product_path(@product), data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?' }%></p>
+    <% else %>
+      <%= simple_form_for [@product, @order] do |f| %>
+        <%= f.input :quantity %>
+        <%= f.submit "Comprar", class: 'btn btn-primary' %>
+      <% end  %>
+    <% end %>
+  <p class="btn btn-success mt-2"><%= link_to 'Voltar para os produtos', root_path, class: "text-decoration-none" %></p>
+  </div>
+</div>
