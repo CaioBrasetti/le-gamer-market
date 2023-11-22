@@ -1,2 +1,11 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<h1>Editar produto</h1>
+
+<%= simple_form_for [@product] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :quantity %>
+  <%= f.input :category, collection: Product::CATEGORIES %>
+
+  <%= f.submit %>
+<% end %>
