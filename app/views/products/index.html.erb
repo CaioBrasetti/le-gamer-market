@@ -2,8 +2,8 @@
 <p>Find me in app/views/products/index.html.erb</p>
 <ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.name%></li>
-    <li><%= product.price%></li>
+    <li><%= link_to product.name, product_path(product) %></li>
+    <li><%= product.price %></li>
   <% end %>
 </ul>
 
