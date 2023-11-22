@@ -25,7 +25,8 @@ class ProductsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end0 update
+  end
+  def update
   end
 
   def destroy
