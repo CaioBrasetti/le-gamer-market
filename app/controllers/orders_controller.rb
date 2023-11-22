@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def create
     # verbo post, criaçar de uma order com os parametros pré defenidos
     @product = Product.find(params[:product_id])
@@ -8,7 +12,7 @@ class OrdersController < ApplicationController
     @order.product = @product
 
     if @order.save
-      redirect_to product_path(@product)
+      redirect_to order_path(@order)
     else
       render 'products/show', status: :unprocessable_entity
     end

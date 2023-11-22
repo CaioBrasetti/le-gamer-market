@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :products do
     resources :orders, only: %i[create]
   end
+  resources :orders, only: %i[show]
 end

@@ -1,0 +1,4 @@
+<h1>oi <%= @order.user.first_name%></h1>
+<p>Voce comprou <%= @order.quantity %> <%= @order.product.name %></p>
+
+<p><%= link_to 'Voltar para os produtos', root_path%></p>
