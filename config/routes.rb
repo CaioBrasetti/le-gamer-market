@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   # get "up" => "rails/health#show", as: :rails_health_check
 
   root to: "products#index"
-  resources :products, except: :index
+  resources :products
   resources :orders, only: %i[create]
 end

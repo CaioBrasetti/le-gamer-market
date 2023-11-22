@@ -3,12 +3,9 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    # if params[:category].present?
-    #   raise
-    #   @products = @products.select do |product|
-    #     product
-    #     end
-    # end
+    if params[:category].present?
+      @products = @products.where("category Ilike ?", params[:category])
+    end
   end
 
   def show
@@ -28,12 +25,7 @@ class ProductsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-  end
-
-  def update
+  end0 update
   end
 
   def destroy
