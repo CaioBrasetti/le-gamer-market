@@ -2,7 +2,9 @@
   <div class="text-center">
 
 <h1><%= @product.name%></h1>
-  <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+  <%  if @product.photo.attached? %>
+    <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
   <p>Description: <%= @product.description%></p>
   <h6>Price: <%= @product.price%></h6>
   <p>Quantity: <%= @product.quantity%></p>
