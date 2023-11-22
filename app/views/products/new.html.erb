@@ -1,12 +1,16 @@
-<h1>Novo produto</h1>
-
-<%= simple_form_for [@product] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :description %>
-  <%= f.input :quantity %>
-  <%= f.input :category, collection: Product::CATEGORIES %>
-
-  <%= f.submit %>
-<% end %>
-<p><%= link_to 'Voltar para os produtos', root_path%></p>
+  <div class="container mt-3">
+    <div class="form">
+      <h1>Cadastre Seu Produto</h1>
+      <%= simple_form_for [@product] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%= f.input :quantity %>
+        <%= f.input :category, collection: Product::CATEGORIES %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <p class="btn btn-success"><%= link_to 'Voltar aos produtos', root_path , class: "text-decoration-none"%></p>
+    </div>
+  </div>
