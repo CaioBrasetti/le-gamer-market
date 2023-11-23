@@ -9,10 +9,4 @@ class Product < ApplicationRecord
 
   validates :category, inclusion: { in: CATEGORIES }
   validates :description, length: { minimum: 10 }
-
-  # after_create :sub_comma
-
-  # def sub_comma
-  #   self.price = self.price.to_s.gsub!('.', ',').to_f
-  # end
 end
