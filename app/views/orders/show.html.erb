@@ -2,11 +2,11 @@
 
  <div class="container mt-3">
   <div class="text-center">
-      <h1> Olá, <%= @order.user.first_name%></h1>
-        <h3>Voce comprou <%=@order.quantity %> - <%= @order.product.name %></h3>
-          <h4>Parabéns pela sua compra!</h4>
+      <h1> Hello, <%= @order.user.first_name%></h1>
+        <h3>You've bought <%=@order.quantity %> - <%= @order.product.name %></h3>
+          <h4>Congratulations on your purchase!</h4>
           <div class="mt-4">
-            <p class="btn btn-success rounded-3"><%= link_to 'Voltar para os produtos', root_path, class: "text-decoration-none" %></p>
+            <p class="btn btn-success rounded-3"><%= link_to 'Back to the products list', root_path, class: "text-decoration-none" %></p>
           </div>
   </div>
 </div>

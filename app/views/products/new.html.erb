@@ -1,6 +1,6 @@
   <div class="container mt-3">
     <div class="form">
-      <h1>Cadastre Seu Produto</h1>
+      <h1>Register product</h1>
       <%= simple_form_for [@product] do |f| %>
         <%= f.input :name %>
         <%= f.input :price %>
@@ -12,6 +12,6 @@
       <% end %>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <p class="btn btn-success"><%= link_to 'Voltar aos produtos', root_path , class: "text-decoration-none"%></p>
+        <p class="btn btn-success"><%= link_to 'Back to products list', root_path , class: "text-decoration-none"%></p>
     </div>
   </div>
