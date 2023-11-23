@@ -1,10 +1,9 @@
-<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon mb-3">
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://png.pngtree.com/png-vector/20220623/ourmid/pngtree-space-invaders-character-game-play-png-image_5173025.png" %>
+      <%= image_tag "logo.png" %>
     <% end %>
     <%# Le gamer Market - nome - navbar %>
-    <%= link_to "Le Gamer Market", "/", class: "nav-link" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,9 +11,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="pt-2 text-light fs-6">Balance: <%= current_user.balance %></li>
+          <li class="pt-2 text-light fs-6 pe-4">Balance: <%= number_to_currency(current_user.balance, unit: "$", separator: ",", delimiter: ".", precision: 2)  %></li>
           <li class="nav-item active">
-            <%= link_to "Home", "/", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
