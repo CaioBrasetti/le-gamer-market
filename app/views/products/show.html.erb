@@ -2,6 +2,7 @@
   <div class="text-center">
 
 <h1><%= @product.name%></h1>
+    <%# photos index %>
   <%  if @product.photo.attached? %>
     <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
@@ -11,14 +12,14 @@
   <p>Category: <%= @product.category%></p>
 
   <% if current_user && current_user == @product.user %>
-      <p><%= link_to 'Update product information', edit_product_path, class: 'btn btn-primary mt-2'%></p>
+      <p><%= link_to 'Update product information', edit_product_path, class: 'btn btn-std mt-2 mt-2'%></p>
       <p><%= link_to 'Delete product', product_path(@product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
     <% else %>
       <%= simple_form_for [@product, @order] do |f| %>
         <%= f.input :quantity %>
-        <%= f.submit "Buy", class: 'btn btn-primary' %>
+        <%= f.submit "Buy", class: "btn btn-std" %>
       <% end  %>
     <% end %>
-  <p class="btn btn-success mt-2"><%= link_to 'Back to product list', root_path, class: "text-decoration-none" %></p>
+  <p class="btn btn-std mt-2"><%= link_to 'Back to product list', root_path, class: "text-decoration-none" %></p>
   </div>
 </div>
