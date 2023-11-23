@@ -19,6 +19,14 @@
   <p class="btn btn-std"><%= link_to 'Creat Ad', new_product_path, class: "text-decoration-none"%></p>
   </div>
 
+
+ <div class="card-category d-flex align-items-center justify-content-center text-white mt-4">
+
+
+
+
+
+
   <div class="cards ms-4">
     <% if @products.any? %>
       <% @products.each do |product| %>
@@ -27,9 +35,9 @@
             <h5 class="card-title"><%= link_to product.name, product_path(product), class: "text-decoration-none" %></h5>
             <p class="card-text">Price: <%= number_to_currency(product.price, unit: "$", separator: ",", delimiter: ".", precision: 2)  %></p>
             <%  if product.photo.attached? %>
-              <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag product.photo.key, height: 300, width: 250, crop: :fit %>
             <% end %>
-          </div>
+            </div>
         </div>
       <% end %>
     <% else %>

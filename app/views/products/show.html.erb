@@ -1,15 +1,17 @@
 <div class="container mt-3">
   <div class="text-center">
-    <div>
-    <h1><%= @product.name%></h1>
-    <%# photos index %>
-    <%  if @product.photo.attached? %>
-      <%= cl_image_tag @product.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-    <p>Description: <%= @product.description%></p>
-    <h6>Price: <%= number_to_currency(@product.price, unit: "R$", separator: ",", delimiter: ".", precision: 2)  %></h6>
-    <p>Quantity: <%= @product.quantity%></p>
-    <p>Category: <%= @product.category%></p>
+    <div class="card" >
+      <div>
+        <h1><%= @product.name%></h1>
+        <%# photos index %>
+        <%  if @product.photo.attached? %>
+          <%= cl_image_tag @product.photo.key, height: 300, width: 250, crop: :fit, class: "img-product" %>
+        <% end %>
+        <p>Description: <%= @product.description%></p>
+        <h6>Price: <%= number_to_currency(@product.price, unit: "R$", separator: ",", delimiter: ".", precision: 2)  %></h6>
+        <p>Quantity: <%= @product.quantity%></p>
+        <p>Category: <%= @product.category%></p>
+      </div>
     </div>
     <% if current_user && current_user == @product.user %>
       <p><%= link_to 'Update Product Information', edit_product_path, class: 'btn btn-std mt-2 mt-2'%></p>
