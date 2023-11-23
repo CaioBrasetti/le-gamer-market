@@ -13,15 +13,15 @@
         <p>Category: <%= @product.category%></p>
       </div>
     </div>
-  <% if current_user && current_user == @product.user %>
-      <p><%= link_to 'Update product information', edit_product_path, class: 'btn btn-std mt-2 mt-2'%></p>
-      <p><%= link_to 'Delete product', product_path(@product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
+    <% if current_user && current_user == @product.user %>
+      <p><%= link_to 'Update Product Information', edit_product_path, class: 'btn btn-std mt-2 mt-2'%></p>
+      <p class="btn btn-danger mt-2"><%= link_to 'Delete Product', product_path(@product), class: "text-decoration-none", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
     <% else %>
       <%= simple_form_for [@product, @order] do |f| %>
-        <%= f.input :quantity %>
+        <%= f.input :quantity, input_html: { min: '1', step: '1' } %>
         <%= f.submit "Buy", class: "btn btn-std" %>
       <% end  %>
     <% end %>
-  <p class="btn btn-std mt-2"><%= link_to 'Back to product list', root_path, class: "text-decoration-none" %></p>
+  <p class="btn btn-std mt-2"><%= link_to 'Back to Product List', root_path, class: "text-decoration-none" %></p>
   </div>
 </div>

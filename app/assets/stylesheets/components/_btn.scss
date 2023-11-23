@@ -10,6 +10,18 @@
   }
 }
 
+.btn-dlt {
+  background-color: #ff4327;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  a {
+    color: #5100ff;
+  }
+}
+
 .btn-std:hover {
   background-color: #9F2FD7;
   color: #00D6A2;
