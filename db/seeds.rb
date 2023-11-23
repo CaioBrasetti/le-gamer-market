@@ -20,11 +20,11 @@ user1 = User.create!(first_name: "Caio", last_name: "Rocha", email: "caio@testee
 user1.products.create(name: "PS2", price: 4300.50, description: "Ps2 preto em excelente estado", quantity: 2, category: "Game")
 
 user2 = User.create!(first_name: "Debora", last_name: "lee", email: "debora@testee.com", password: 123123, balance: 100)
-user2.products.create(name: "PS4", price: 4300.50, description: "Ps4 branco em excelente estado", quantity: 5, category: "Console")
+user2.products.create(name: "Teste", price: 4300.50, description: "Ps4 branco em excelente estado", quantity: 5, category: "Console")
 
 user3 = User.create!(first_name: "Anthony", last_name: "vieira", email: "thony@testee.com", password: 123123, balance: 100)
-user3.products.create(name: "PS5", price: 4300.50, description: "Ps5 branco em excelente estado", quantity: 10, category: "Console")
+user3.products.create(name: "Xbox", price: 4300.50, description: "Ps5 branco em excelente estado", quantity: 10, category: "Parts")
 
 user4 = User.create!(first_name: "Pedrão", last_name: "Nascimento", email: "pedro@testee.com", password: 123123, balance: 100)
-user4.products.create(name: "PS1", price: 4300.50, description: "Ps1 branco em excelente estado", quantity: 1, category: "Service")
+user4.products.create(name: "Mega Drive", price: 4300.50, description: "Ps1 branco em excelente estado", quantity: 1, category: "Service")
 puts "Concluido"
