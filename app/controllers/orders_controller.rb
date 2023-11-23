@@ -11,11 +11,14 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.product = @product
 
-    if @order.save
-      redirect_to order_path(@order)
-    else
-      render 'products/show', status: :unprocessable_entity
-    end
+    @order.price_transactions = @product.price * @order.quantity
+      if @order.save
+        @product.update(quantity: @product.quantity - @order.quantity)
+        current_user.update(balance: current_user.balance - @order.price_transactions)
+        redirect_to order_path(@order)
+      else
+        render 'products/show', status: :unprocessable_entity, notice: @order.errors.full_messages
+      end
   end
 
   private

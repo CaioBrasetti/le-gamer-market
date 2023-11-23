@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :products
-  has_many :orders
+  has_many :products, dependent: :destroy
+  has_many :orders, dependent: :destroy
   validates :last_name, :first_name, presence: true
 
   # Include default devise modules. Others available are:
