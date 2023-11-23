@@ -1,6 +1,6 @@
   <div class="container mt-3">
     <div class="form">
-      <h1>Editar produto</h1>
+      <h1>Update the product</h1>
       <%= simple_form_for [@product] do |f| %>
         <%= f.input :name %>
         <%= f.input :price %>
@@ -13,6 +13,6 @@
       <% end %>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <p class="btn btn-success"><%= link_to 'Voltar ao Produto', product_path(@product) , class: "text-decoration-none"%></p>
+        <p class="btn btn-std"><%= link_to 'Back to the product list', product_path(@product) , class: "text-decoration-none"%></p>
     </div>
   </div>
