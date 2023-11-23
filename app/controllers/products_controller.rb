@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     if params[:category].present?
-      @products = @products.where("category Ilike ?", params[:category])
+      @products = @products.where("category ILIKE ?", params[:category])
     end
   end
 
