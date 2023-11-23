@@ -25,7 +25,7 @@
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title"><%= link_to product.name, product_path(product), class: "text-decoration-none" %></h5>
-            <p class="card-text">Price: <%= product.price %></p>
+            <p class="card-text">Price: <%= number_to_currency(product.price, unit: "R$", separator: ",", delimiter: ".", precision: 2)  %></p>
           </div>
         </div>
       <% end %>
