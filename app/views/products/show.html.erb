@@ -16,7 +16,7 @@
       <p><%= link_to 'Delete product', product_path(@product), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></p>
     <% else %>
       <%= simple_form_for [@product, @order] do |f| %>
-        <%= f.input :quantity %>
+        <%= f.input :quantity, input_html: { min: '1', step: '1' } %>
         <%= f.submit "Buy", class: "btn btn-std" %>
       <% end  %>
     <% end %>

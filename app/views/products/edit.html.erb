@@ -5,7 +5,7 @@
         <%= f.input :name %>
         <%= f.input :price %>
         <%= f.input :description %>
-        <%= f.input :quantity %>
+        <%= f.input :quantity, input_html: { min: '1', step: '1' } %>
         <%= f.input :category, collection: Product::CATEGORIES %>
         <%=  f.input :photo, as: :file %>
 
