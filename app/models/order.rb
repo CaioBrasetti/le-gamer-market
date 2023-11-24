@@ -8,10 +8,12 @@ class Order < ApplicationRecord
   validate :check_balance
 
   def check_disponibility
-    errors.add(:quantity, "Não existe produto o suficiente") if self.quantity > self.product.quantity
+    return unless self.quantity
+    
+    errors.add(:quantity, "not enough in stock") if self.quantity > self.product.quantity
   end
 
   def check_balance
-    errors.add(:base, "Você não tem saldo o suficiente") if self.price_transactions > self.user.balance
+    errors.add(:quantity, "can't be bought with your balance") if self.price_transactions > self.user.balance
   end
 end

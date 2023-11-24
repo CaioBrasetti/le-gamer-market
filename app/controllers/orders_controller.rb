@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.product = @product
 
-    @order.price_transactions = @product.price * @order.quantity
+    @order.price_transactions = @product.price * (@order.quantity || @order.quantity = 0)
       if @order.save
         @product.update(quantity: @product.quantity - @order.quantity)
         current_user.update(balance: current_user.balance - @order.price_transactions)
