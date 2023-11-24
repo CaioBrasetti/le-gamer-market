@@ -1,17 +1,11 @@
-  <div class="container mt-3">
-    <div class="form">
-      <h1>Register product</h1>
-      <%= simple_form_for [@product] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :price %>
-        <%= f.input :description %>
-        <%= f.input :quantity, input_html: { min: '1', step: '1' } %>
-        <%= f.input :category, collection: Product::CATEGORIES %>
-        <%=  f.input :photo, as: :file %>
-        <%= f.submit %>
-      <% end %>
-    </div>
+<div class="container mt-3">
+  <div class="register-form">
+    <h1 class="text-center">Register product</h1>
+
+    <%= render "form", product: @product %>
+
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <p class="btn btn-std"><%= link_to 'Back to products list', root_path , class: "text-decoration-none"%></p>
+      <%= link_to 'Back to the products list', root_path, class: "log-back-btn btn mt-3" %>
     </div>
   </div>
+</div>
