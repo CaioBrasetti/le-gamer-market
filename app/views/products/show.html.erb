@@ -1,7 +1,7 @@
 <div class="products">
   <div class="card-product">
     <%  if @product.photo.attached? %>
-      <%= cl_image_tag @product.photo.key %>
+      <%= cl_image_tag @product.photo.key, height: 400, width: 150, crop: :pad %>
     <% end %>
     <div class="card-product-infos">
       <h1><%= @product.name%></h1>
