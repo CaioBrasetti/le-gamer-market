@@ -1,12 +1,12 @@
 <div class="card-trip">
-  <%= cl_image_tag @order.product.photo.key, height: 300, width: 250, crop: :pad %>
+  <%= cl_image_tag @order.product.photo.key, height: 300, width: 250, crop: :fit %>
   <div class="card-trip-infos">
     <div>
       <h2>Hello, <%= @order.user.first_name%></h2>
       <p>You've bought <%=@order.quantity %> - <%= @order.product.name %></p>
       <p>Congratulations on your purchase!</p>
     </div>
-    <h2 class="card-trip-pricing"><%= number_to_currency(@order.price_transactions, unit: "$", separator: ",", delimiter: ".", precision: 2)  %></h2>
+    <h2 class="card-trip-pricing"><%= number_to_currency(@order.price_transactions, unit: "$", separator: ",", delimiter: ".", precision: 2)  %><h2>
   </div>
   <%= link_to 'Back to the products list', root_path, class: "log-back-btn btn mt-4" %>
 </div>
