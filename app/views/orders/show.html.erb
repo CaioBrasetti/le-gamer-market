@@ -6,7 +6,7 @@
       <p>You've bought <%=@order.quantity %> - <%= @order.product.name %></p>
       <p>Congratulations on your purchase!</p>
     </div>
-    <h2 class="card-trip-pricing">R$ <%=@order.price_transactions %></h2>
+    <h2 class="card-trip-pricing"><%= number_to_currency(@order.price_transactions, unit: "$", separator: ",", delimiter: ".", precision: 2)  %></h2>
   </div>
   <%= link_to 'Back to the products list', root_path, class: "log-back-btn btn mt-4" %>
 </div>
