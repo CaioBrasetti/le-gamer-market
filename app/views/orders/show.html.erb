@@ -1,5 +1,5 @@
 <div class="card-trip">
-  <%= cl_image_tag @order.product.photo.key %>
+  <%= cl_image_tag @order.product.photo.key, height: 300, width: 250, crop: :pad %>
   <div class="card-trip-infos">
     <div>
       <h2>Hello, <%= @order.user.first_name%></h2>
