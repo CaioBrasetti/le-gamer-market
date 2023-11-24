@@ -1,0 +1,9 @@
+<%= simple_form_for [@product] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :quantity, input_html: { min: '1', step: '1' } %>
+  <%= f.input :category, collection: Product::CATEGORIES %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, "Send informations", :class => 'log-btn' %>
+<% end %>

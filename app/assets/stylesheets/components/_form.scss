@@ -1,0 +1,68 @@
+.form-group{
+  position: relative;
+  margin-bottom:15px;
+}
+
+.form-control{
+  height:50px;
+  padding:5px 7px 5px 15px;
+  background:#fff;
+  border:2px solid #ddd;
+  @include border-radius(4px);
+    &:focus, &:focus + .fa{
+      border-color:#00FFCA;
+    }
+}
+
+.log-btn{
+  background:#00FFCA;
+  width:100%;
+  font-size:16px;
+  height:50px;
+  color:#282828;
+  text-decoration:none;
+  border:none;
+  @include border-radius(4px);
+  &:hover{
+    background:#C34EE8;
+  }
+}
+
+.log-back-btn{
+  background:#C34EE8;
+  width:100%;
+  font-size:16px;
+  height:50px;
+  color:#fff;
+  text-decoration:none;
+  border:none;
+  @include border-radius(4px);
+  &:hover{
+    background:#00FFCA;
+  }
+}
+
+.log-delete-btn{
+  background:#FA8072;
+  width:100%;
+  font-size:16px;
+  height:50px;
+  color:#fff;
+  text-decoration:none;
+  border:none;
+  @include border-radius(4px);
+  &:hover{
+    background:#A52A2A;
+  }
+}
+
+.link{
+  text-decoration:none;
+  color:#C6C6C6;
+  font-size:12px;
+  margin-bottom:15px;
+  &:hover{
+    text-decoration: underline;
+    color:#8C918F;
+  }
+}
