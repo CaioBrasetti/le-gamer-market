@@ -1,18 +1,18 @@
 <div class="products">
   <div class="card-product">
     <%  if @product.photo.attached? %>
-      <%= cl_image_tag @product.photo.key, height: 400, width: 150, crop: :pad %>
+      <%= cl_image_tag @product.photo.key, height: 400, width: 150, crop: :pad, class: 'p-4' %>
     <% end %>
     <div class="card-product-infos">
-      <h1><%= @product.name%></h1>
-      <p>Description: <%= @product.description%></p>
-      <p>Price: <%= number_to_currency(@product.price, unit: "R$", separator: ",", delimiter: ".", precision: 2)  %></p>
-      <p>Quantity: <%= @product.quantity%></p>
-      <p>Category: <%= @product.category%></p>
+      <h2 class="mb-4"><strong><%= @product.name%></strong></h2>
+      <p><strong>Description:</strong> <%= @product.description%></p>
+      <p class="mt-3"><strong>Price:</strong> <%= number_to_currency(@product.price, unit: "R$", separator: ",", delimiter: ".", precision: 2)  %></p>
+      <p class="mt-3"><strong>Quantity:</strong> <%= @product.quantity%></p>
+      <p class="mt-3"><strong>Category:</strong> <%= @product.category%></p>
     </div>
   </div>
 
-  <div class="card-purchase mt-4">
+  <div class="card-purchase">
     <% if current_user && current_user == @product.user %>
         <p><%= link_to 'Update Product Information', edit_product_path, class: 'log-btn btn'%></p>
         <%= link_to 'Delete Product', product_path(@product), class: "btn log-delete-btn", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
