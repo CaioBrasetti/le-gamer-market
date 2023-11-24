@@ -6,8 +6,8 @@
     <div class="card-product-infos">
       <h1><%= @product.name%></h1>
       <p>Description: <%= @product.description%></p>
-      <p>Price: <%= number_to_currency(@product.price, unit: "R$", separator: ",", delimiter: ".", precision: 2)  %></p>
-      <p>Quantity: <%= @product.quantity%></p>
+      <p>Price: <%= number_to_currency(@product.price, unit: "$", separator: ",", delimiter: ".", precision: 2)  %></p>
+      <p>Quantity: <%= @product.quantity %></p>
       <p>Category: <%= @product.category%></p>
     </div>
   </div>
@@ -18,7 +18,7 @@
         <%= link_to 'Delete Product', product_path(@product), class: "btn log-delete-btn", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%>
       <% else %>
         <%= simple_form_for [@product, @order] do |f| %>
-          <%= f.input :quantity, input_html: { min: '1', step: '1' } %>
+          <%= f.input :quantity, input_html: { min: '1', step: '1', value: "1" } %>
           <%= f.submit "Buy", class: "log-btn" %>
         <% end  %>
       <% end %>
