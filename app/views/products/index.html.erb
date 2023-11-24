@@ -28,7 +28,7 @@
             <% end %>
               <div class="d-flex justify-content-between mt-3">
                 <h5 class="card-title"><%= link_to product.name, product_path(product), class: "text-decoration-none text-black" %></h5>
-                <p class="card-text"><i class="fa-solid fa-dollar-sign"></i> <%= number_to_currency(product.price, unit: "$", separator: ",", delimiter: ".", precision: 2)  %></p>
+                <p class="card-text"></i> <%= number_to_currency(product.price, unit: "$", separator: ",", delimiter: ".", precision: 2)  %></p>
               </div>
             </div>
         </div>
