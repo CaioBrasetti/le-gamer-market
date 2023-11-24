@@ -1,12 +1,12 @@
-
-
- <div class="container mt-3">
-  <div class="text-center">
-      <h1> Hello, <%= @order.user.first_name%></h1>
-        <h3>You've bought <%=@order.quantity %> - <%= @order.product.name %></h3>
-          <h4>Congratulations on your purchase!</h4>
-          <div class="mt-4">
-            <p class="btn btn-success rounded-3"><%= link_to 'Back to the products list', root_path, class: "text-decoration-none" %></p>
-          </div>
+<div class="card-trip">
+  <%= cl_image_tag @order.product.photo.key %>
+  <div class="card-trip-infos">
+    <div>
+      <h2>Hello, <%= @order.user.first_name%></h2>
+      <p>You've bought <%=@order.quantity %> - <%= @order.product.name %></p>
+      <p>Congratulations on your purchase!</p>
+    </div>
+    <h2 class="card-trip-pricing">R$ <%=@order.price_transactions %></h2>
   </div>
+  <%= link_to 'Back to the products list', root_path, class: "log-back-btn btn mt-4" %>
 </div>
